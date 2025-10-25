@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profil Linktree Sederhana</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;500&display=swap');
+
+.name {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+/* Reset dasar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Gaya umum halaman */
+body {
+  font-family: 'Margin', sans-serif;
+  background: linear-gradient(135deg, #f8f9fb, #eaeef5);
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Container utama */
+.container {
+  background: #fff;
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* Foto profil */
+.profile-photo {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #ddd;
+  margin-bottom: 1.5rem; /* Tambah jarak bawah */
+}
+
+/* Nama dan bio */
+.name {
+    
+  font-size: 1.7rem;
+  font-weight: 600;
+  margin-bottom: 0.6rem; /* Jarak antara nama dan bio */
+}
+
+.bio {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 2rem; /* Jarak antara bio dan link */
+  line-height: 1.5;
+}
+
+/* Bagian kumpulan link */
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem; /* Spasi antar tombol link */
+}
+
+/* Setiap kartu link */
+.link-card {
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+/* Efek hover pada keseluruhan kartu */
+.link-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.07);
+}
+
+/* Elemen link */
+.link-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-decoration: none;
+  background: #f5f7fa;
+  color: #333;
+  font-weight: 500;
+  border-radius: 12px;
+  padding: 1rem 1.3rem; /* Tambah padding agar tombol lebih lega */
+  transition: all 0.3s ease;
+  box-shadow: inset 0 0 0 1px #e1e5ec;
+}
+
+/* Hover effect tombol */
+.link-item:hover {
+  background: #e8ecf5;
+  box-shadow: inset 0 0 0 2px #cdd3e3;
+}
+
+/* Ikon di sebelah kiri */
+.icon {
+  width: 26px;
+  height: 26px;
+  margin-right: 14px; /* Tambah jarak antara ikon dan teks */
+  flex-shrink: 0;
+}
+
+/* Pastikan teks sejajar vertikal */
+.link-item span {
+  line-height: 1;
+  display: flex;
+  align-items: center;
+}
+
+/* Responsif */
+@media (max-width: 480px) {
+  .container {
+    padding: 1.8rem;
+  }
+
+  .link-item {
+    padding: 0.9rem 1.1rem;
+    font-size: 0.95rem;
+  }
+
+  .icon {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <main class="container">
+    <section class="profile">
+      <img src="img/logo.jpg" alt="Foto Profil" class="profile-photo" />
+      <h1 class="name">MuviStar</h1>
+      <p class="bio">Clothing Brand | Custom Baju + Free Desain | Custom Desain</p>
+    </section>
+
+    <section class="links">
+      <div class="link-card">
+        <a href="https://www.instagram.com/muvis.tar/" target="_blank" class="link-item">
+          <img src="img/instagram.png" alt="Instagram" class="icon" />
+          <span>Instagram</span>
+        </a>
+      </div>
+
+      <div class="link-card">
+        <a href="https://www.tiktok.com/@muvis_tar" target="_blank" class="link-item">
+          <img src="img/tiktok.png" alt="tiktok" class="icon" />
+          <span>tiktok</span>
+        </a>
+      </div>
+
+      <div class="link-card">
+        <a href="https://l.instagram.com/?u=https%3A%2F%2Fid.shp.ee%2F3f7k8LR%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAacuWADiLpQZBe3-RenQkNB_ZchE-axEro_1u8l5NPd0ZvAsbTVIHVjQkKt7ZQ_aem_0OQtg4ot9xWuDt7HJ68yfw&e=AT1EbiywNNpW8UGVUJ58s-WBR2M75jfMvYaPaq5Xbfvw6ejIk_AUEVRQVzjpvx85DNsXNu9pfIUKH7aTenta6UQnMYwfowhO1R4fz49NdQ" target="_blank" class="link-item">
+          <img src="img/shopee.png" alt="shoppe" class="icon" />
+          <span>shoppe</span>
+        </a>
+      </div>
+
+      <div class="link-card">
+        <a href="https://api.whatsapp.com/send/?phone=6287835299856&text&type=phone_number&app_absent=0&wame_ctl=1" target="_blank" class="link-item">
+          <img src="img/whatsapp.png" alt="whatsapp" class="icon" />
+          <span>whatsapp</span>
+        </a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
+
