@@ -1,188 +1,284 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Profil Linktree Sederhana</title>
-  <link rel="stylesheet" href="style.css" />
-  <style>
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;500&display=swap');
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MUVISTAR | Premium Screen Printing</title>
 
-.name {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
 }
 
-body {
-  font-family: 'Open Sans', sans-serif;
+body{
+background:#0d0d0d;
+color:#fff;
 }
 
-
-/* Reset dasar */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+header{
+position:fixed;
+width:100%;
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(0,0,0,.85);
+backdrop-filter:blur(10px);
 }
 
-/* Gaya umum halaman */
-body {
-  font-family: 'Margin', sans-serif;
-  background: linear-gradient(135deg, #f8f9fb, #eaeef5);
-  color: #333;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+.logo{
+font-size:28px;
+font-weight:700;
+color:#D4AF37;
+letter-spacing:3px;
 }
 
-/* Container utama */
-.container {
-  background: #fff;
-  padding: 2.5rem;
-  border-radius: 20px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-  width: 90%;
-  max-width: 400px;
-  text-align: center;
+nav a{
+color:#fff;
+text-decoration:none;
+margin-left:30px;
+transition:.3s;
 }
 
-/* Foto profil */
-.profile-photo {
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 3px solid #ddd;
-  margin-bottom: 1.5rem; /* Tambah jarak bawah */
+nav a:hover{
+color:#D4AF37;
 }
 
-/* Nama dan bio */
-.name {
-    
-  font-size: 1.7rem;
-  font-weight: 600;
-  margin-bottom: 0.6rem; /* Jarak antara nama dan bio */
+.hero{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+    background:
+    linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.7)),
+    url("images/depan.jpg");
+    background-size:cover;
+    background-position:center;
 }
 
-.bio {
-  font-size: 0.95rem;
-  color: #666;
-  margin-bottom: 2rem; /* Jarak antara bio dan link */
-  line-height: 1.5;
+.hero h1{
+font-size:60px;
+margin-bottom:20px;
 }
 
-/* Bagian kumpulan link */
-.links {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem; /* Spasi antar tombol link */
+.hero p{
+font-size:20px;
+color:#ddd;
+margin-bottom:35px;
 }
 
-/* Setiap kartu link */
-.link-card {
-  transition: transform 0.2s ease, box-shadow 0.3s ease;
+.btn{
+display:inline-block;
+padding:15px 35px;
+background:#D4AF37;
+color:#000;
+font-weight:600;
+text-decoration:none;
+border-radius:40px;
+margin:10px;
+transition:.3s;
 }
 
-/* Efek hover pada keseluruhan kartu */
-.link-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.07);
+.btn:hover{
+transform:translateY(-5px);
 }
 
-/* Elemen link */
-.link-item {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  text-decoration: none;
-  background: #f5f7fa;
-  color: #333;
-  font-weight: 500;
-  border-radius: 12px;
-  padding: 1rem 1.3rem; /* Tambah padding agar tombol lebih lega */
-  transition: all 0.3s ease;
-  box-shadow: inset 0 0 0 1px #e1e5ec;
+section{
+padding:90px 10%;
 }
 
-/* Hover effect tombol */
-.link-item:hover {
-  background: #e8ecf5;
-  box-shadow: inset 0 0 0 2px #cdd3e3;
+.title{
+text-align:center;
+font-size:38px;
+margin-bottom:50px;
+color:#D4AF37;
 }
 
-/* Ikon di sebelah kiri */
-.icon {
-  width: 26px;
-  height: 26px;
-  margin-right: 14px; /* Tambah jarak antara ikon dan teks */
-  flex-shrink: 0;
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
 }
 
-/* Pastikan teks sejajar vertikal */
-.link-item span {
-  line-height: 1;
-  display: flex;
-  align-items: center;
+.card{
+background:#1b1b1b;
+padding:30px;
+border-radius:15px;
+transition:.3s;
 }
 
-/* Responsif */
-@media (max-width: 480px) {
-  .container {
-    padding: 1.8rem;
-  }
-
-  .link-item {
-    padding: 0.9rem 1.1rem;
-    font-size: 0.95rem;
-  }
-
-  .icon {
-    width: 22px;
-    height: 22px;
-  }
+.card:hover{
+transform:translateY(-10px);
 }
 
-  </style>
+.card h3{
+margin-bottom:15px;
+color:#D4AF37;
+}.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    border-radius:10px;
+    margin-top:15px;
+}
+
+footer{
+padding:30px;
+text-align:center;
+background:#000;
+color:#aaa;
+}
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px 22px;
+border-radius:40px;
+text-decoration:none;
+font-weight:bold;
+}
+</style>
+
 </head>
 <body>
-  <main class="container">
-    <section class="profile">
-      <img src="img/logo.jpg" alt="Foto Profil" class="profile-photo" />
-      <h1 class="name">MuviStar</h1>
-      <p class="bio">Clothing Brand | Custom Baju + Free Desain | Custom Desain</p>
-    </section>
 
-    <section class="links">
-      <div class="link-card">
-        <a href="https://www.instagram.com/muvis.tar/" target="_blank" class="link-item">
-          <img src="img/instagram.png" alt="Instagram" class="icon" />
-          <span>Instagram</span>
-        </a>
-      </div>
+<header>
+<div class="logo">MUVISTAR</div>
 
-      <div class="link-card">
-        <a href="https://www.tiktok.com/@muvis_tar" target="_blank" class="link-item">
-          <img src="img/tiktok.png" alt="tiktok" class="icon" />
-          <span>tiktok</span>
-        </a>
-      </div>
+<nav>
+<a href="#">Home</a>
+<a href="#layanan">Layanan</a>
+<a href="#portfolio">Portfolio</a>
+<a href="#kontak">Kontak</a>
+</nav>
+</header>
 
-      <div class="link-card">
-        <a href="https://l.instagram.com/?u=https%3A%2F%2Fid.shp.ee%2F3f7k8LR%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAacuWADiLpQZBe3-RenQkNB_ZchE-axEro_1u8l5NPd0ZvAsbTVIHVjQkKt7ZQ_aem_0OQtg4ot9xWuDt7HJ68yfw&e=AT1EbiywNNpW8UGVUJ58s-WBR2M75jfMvYaPaq5Xbfvw6ejIk_AUEVRQVzjpvx85DNsXNu9pfIUKH7aTenta6UQnMYwfowhO1R4fz49NdQ" target="_blank" class="link-item">
-          <img src="img/shopee.png" alt="shoppe" class="icon" />
-          <span>shoppe</span>
-        </a>
-      </div>
+<section class="hero">
 
-      <div class="link-card">
-        <a href="https://api.whatsapp.com/send/?phone=6287835299856&text&type=phone_number&app_absent=0&wame_ctl=1" target="_blank" class="link-item">
-          <img src="img/whatsapp.png" alt="whatsapp" class="icon" />
-          <span>whatsapp</span>
-        </a>
-      </div>
-    </section>
-  </main>
+<div>
+
+<h1>PREMIUM SCREEN PRINTING</h1>
+
+<p>
+Membantu Brand Clothing Dan Custom Kaos Tampil Lebih Berkualitas.
+</p>
+
+<a href="https://wa.me/6287835299856" class="btn">
+Pesan Sekarang
+</a>
+
+<a href="#portfolio" class="btn">
+Lihat Portfolio
+</a>
+
+</div>
+
+</section>
+
+<section id="layanan">
+
+<h2 class="title">Layanan Kami</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Free Desain</h3>
+<p>Mengikuti permintaan Kalian dengan cara Order minimal 1PCS dan Chat Admin </p>
+</div>
+
+<div class="card">
+<h3>Sablon Plastisol</h3>
+<p>Hasil tajam, awet dan premium.</p>
+</div>
+
+<div class="card">
+<h3>DTF Printing</h3>
+<p>Cocok untuk satuan maupun partai.</p>
+</div>
+
+<div class="card">
+<h3>Custom Jersey</h3>
+<p>Hasil Presisi, Warna yang solid, dan jahitan rapi</p>
+</div>
+
+
+
+<div class="card">
+<h3>Brand Clothing</h3>
+<p>Produksi kaos hingga hoodie.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="portfolio">
+
+<h2 class="title">Kenapa Memilih Kami?</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>✔ Kualitas Premium</h3>
+<div class="card">
+    <img src="images/sablon 1.png" alt="Kualitas Premium">
+</div>
+</div>
+
+<div class="card">
+<h3>✔ Pengerjaan Cepat</h3>
+<div class="card">
+    <img src="images/sablon sugali.jpg" alt="Pengerjaan Cepat">
+</div>
+</div>
+
+<div class="card">
+<h3>✔ Harga Bersahabat</h3>
+</div>
+
+<div class="card">
+<h3>✔ Bisa Kirim Seluruh Indonesia</h3>
+</div>
+
+</div>
+
+</section>
+
+<section id="kontak">
+
+<h2 class="title">Hubungi Kami</h2>
+
+<center>
+
+<p>WhatsApp : 087835299856</p>
+
+<p>Instagram : @muvis.tar</p>
+
+<p>TikTok : @muvis_tar</p>
+
+</center>
+
+</section>
+
+<footer>
+
+© 2026 MUVISTAR. All Rights Reserved.
+
+</footer>
+
+<a class="whatsapp" href="https://wa.me/6287835299856">
+Chat WhatsApp
+</a>
+
 </body>
 </html>
-
